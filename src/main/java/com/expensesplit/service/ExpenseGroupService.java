@@ -38,7 +38,7 @@ public class ExpenseGroupService {
         return groupMemberRepository.save(groupMember);
     }
 
-    public List<ExpenseGroup> getGroupMembers(Integer groupId) {
+    public List<GroupMember> getGroupMembers(Integer groupId) {
         return groupMemberRepository.findByGroup_GroupId(groupId);
     }
 
