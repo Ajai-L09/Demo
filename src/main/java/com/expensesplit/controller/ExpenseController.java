@@ -26,7 +26,7 @@ public class ExpenseController {
     }
     @PostMapping("/{id}/participants")
     public ResponseEntity<List<ExpenseParticipant>> addParticipants(@PathVariable Integer id, @RequestBody List<ExpenseParticipant> participants) {
-        List<ExpenseParticipant> savedParticipants = expenseService.addParticipantsToExpense(id, participants);
+        List<ExpenseParticipant> savedParticipants = expenseService.addExpenseParticipant(id, participants);
         return ResponseEntity.ok(savedParticipants);
     }
     @GetMapping("/{id}/participants")
