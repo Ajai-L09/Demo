@@ -1,6 +1,7 @@
 package com.expensesplit.controller;
 
 import com.expensesplit.model.Expense;
+import com.expensesplit.model.ExpenseParticipant;
 import com.expensesplit.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +23,15 @@ public class ExpenseController {
     public ResponseEntity<List<Expense>> getExpensesForGroup(@PathVariable Integer id) {
         List<Expense> expenses = expenseService.getExpensesForGroup(id);
         return ResponseEntity.ok(expenses);
+    }
+    @PostMapping("/{id}/participants")
+    public ResponseEntity<List<ExpenseParticipant>> addParticipants(@PathVariable Integer id, @RequestBody List<ExpenseParticipant> participants) {
+        List<ExpenseParticipant> savedParticipants = expenseService.addParticipantsToExpense(id, participants);
+        return ResponseEntity.ok(savedParticipants);
+    }
+    @GetMapping("/{id}/participants")
+    public ResponseEntity<List<ExpenseParticipant>> getParticipants(@PathVariable Integer id) {
+        List<ExpenseParticipant> participants = expenseService.getParticipantsForExpense(id);
+        return ResponseEntity.ok(participants);
     }
 }
