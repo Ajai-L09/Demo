@@ -26,5 +26,5 @@ public class User {
     @Column(name = "contact_no")
     private String contactNo;
     @Column(name = "join_date", updatable = false)
-    private Timestamp joinDate = new Timestamp(System.in.currentTimeMillis());
+    private Timestamp joinDate = new Timestamp(System.currentTimeMillis());
 }

@@ -18,7 +18,7 @@ public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "expense_id")
-    private Integer expense_id;
+    private Integer expenseId;
 
     @ManyToOne
     @JoinColumn(name = "group_id", referencedColumnName = "group_id" )

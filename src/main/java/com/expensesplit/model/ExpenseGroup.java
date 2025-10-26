@@ -21,7 +21,7 @@ public class ExpenseGroup {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="created_by", referencedColumnName = "user-id")
+    @JoinColumn(name="created_by", referencedColumnName = "user_id")
     private User createdBy;
 
     @Column(name = "created_at", updatable = false)

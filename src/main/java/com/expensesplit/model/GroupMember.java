@@ -23,7 +23,7 @@ public class GroupMember {
     @ManyToOne
     @JoinColumn(name= "user_id", referencedColumnName = "user_id")
     private User user;
-    @Column(name = "joined-at", updatable = false)
+    @Column(name = "joined_at", updatable = false)
     private Timestamp joinedAt = new Timestamp(System.currentTimeMillis());
 
 }
