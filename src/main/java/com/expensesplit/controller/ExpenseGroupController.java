@@ -1,6 +1,7 @@
 package com.expensesplit.controller;
 
 import com.expensesplit.model.ExpenseGroup;
+import com.expensesplit.model.GroupMember;
 import com.expensesplit.service.ExpenseGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,4 +25,15 @@ public class ExpenseGroupController {
         List<ExpenseGroup> groups = expenseGroupService.getAllGroups();
         return ResponseEntity.ok(groups);
     }
+    @PostMapping("/{id}/members")
+    public ResponseEntity<GroupMember> addMember(@PathVariable Integer id, @RequestBody GroupMember groupMember) {
+        GroupMember newMember = expenseGroupService.addMemberToGroup(id, groupMember);
+        return ResponseEntity.ok(newMember);
+    }
+    @GetMapping("/{id}/members")
+    public ResponseEntity<List<GroupMember>> getGroupMembers(@PathVariable Integer id) {
+        List<GroupMember> members = expenseGroupService.getGroupMembers(id);
+        return ResponseEntity.ok(members);
+    }
+
 }
