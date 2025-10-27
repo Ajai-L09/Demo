@@ -10,10 +10,6 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "expenses")
-
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

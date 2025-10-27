@@ -9,10 +9,6 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "groups")
-
 public class ExpenseGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

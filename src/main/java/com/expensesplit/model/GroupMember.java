@@ -1,17 +1,12 @@
 package com.expensesplit.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 @Data
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "group_members")
 public class GroupMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
